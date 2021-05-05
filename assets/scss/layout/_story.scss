@@ -1,0 +1,55 @@
+
+/*--- Two Block Panel ---*/
+.two-panel-block{
+	float: left;
+	width: 100%;
+}
+.two-panel-block p{
+	font-size:16px;
+}
+
+
+/*--- Two Block Panel ---*/
+.four-panel-block{
+	float: left;
+	width:100%;
+}
+
+.bg-primary {
+    background-color: $bg-story!important;
+}
+
+
+
+
+.content-half{
+    color:$color-whiite;
+}
+.content-half ul{
+    padding:0;
+    list-style:none;
+}
+.content-half ul li{
+    margin:15px 0;
+    float:left;
+    width:100%;
+}
+.content-half ul li img{width: 24px; filter: invert(100%); float: left;}
+
+.content-half ul li i{
+    float:left;
+    font-size:30px;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+.content-half ul li .list-content{
+    float:left;
+    margin-left:20px;
+}
+.content-half ul li strong{
+    font-size: $subheading;
+    font-weight: $font-weight-bold;
+}
+.content-half .btn{
+    margin-top:20px;
+}

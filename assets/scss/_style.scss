@@ -1,0 +1,130 @@
+
+    
+
+// svgfiles
+$svg:rgba(133, 0, 0, 0.2);
+
+.btn{
+	font-family:$body-font;
+	font-size: 1rem;
+	font-weight: 600;
+    }
+    
+.btn-primary{
+	background-color: $bg-story;
+	border-color:$bg-story;
+	text-shadow: 1px 1px 2px rgba(0,0,0,0.4)
+}
+
+.btn-primary:hover,.btn-primary:focus{
+	background-color: $top-nav;
+	border-color:$top-nav;
+}
+.btn-capsul{border-radius: 50px;}
+
+.text-underline-primary{margin-bottom: 1rem;}
+.text-underline{
+    width:100px;
+    height: 4px;
+    left: 50%;
+    background-color: $top-nav;
+    margin: 0 auto;
+    border-radius: 10px;;
+}
+
+.text-underline-rb-whit{margin-bottom:1rem;}
+.text-underline-white{
+    width:100px;
+    height: 4px;
+    left: 50%;
+    background-color: $team-bg;
+    border-radius: 10px;;
+    margin-top: .5rem;
+}
+
+// top Nav
+
+.top-nav {
+  background-color: $top-nav;
+    height: 80px;
+    transition: 0.5s ease-in;
+	-webkit-transition: 0.5s ease-in;
+    -moz-transition: 0.5s ease-in;
+    color: $color-whiite;
+    font-family: $header-font;
+}
+
+    .top-nav .navbar-nav li .nav-link {
+        color:$color-whiite;
+        font-size: 14px;
+        padding:29px 15px;
+        font-weight: 600;
+        text-transform: uppercase;
+        transition: 0.5s ease-in;
+        -webkit-transition: 0.5s ease-in;
+        -moz-transition: 0.5s ease-in;}
+
+
+        .top-nav li a.nav-link:hover, .top-nav .nav-item.active a.nav-link{
+            border-bottom: 3px solid $nav-hover;
+            color:$nav-hover;
+            transition: 0.5s ease-in;
+            -webkit-transition: 0.5s ease-in;
+            -moz-transition: 0.5s ease-in;
+        }
+        .top-nav .navbar-brand{
+            font-size: 28px;
+            color:$color-whiite;
+            font-family: $body-font;
+        }
+
+
+
+
+// footer
+
+footer{
+	background-color:$intro; 
+	color: $color-whiite;
+	text-align: center;
+	font-size: 14px;
+	padding: 60px 0;
+	font-family: $body-font;
+	float: left;
+	width: 100%;
+
+}
+
+
+
+footer a{color: $top-nav;}
+
+
+#footer{
+	padding: 60px 0;
+}
+#footer .bottom {
+    background-color: #0a1c2e;
+}
+#footer>.bottom .copyright {
+    color: #e5e5e5;
+    font-weight: 600;
+}
+#footer>.copyright a {
+    color: #f2ff49;
+    margin-left: 3px;
+    padding-right: 3px;
+}
+#footer>.bottom p {
+    margin-bottom: 0;
+    line-height: 50px;
+    font-size: 16px;
+    font-weight: 400;
+}
+footer>.copyright p span {
+    color: #d1caca;
+}
+#footer>.bottom .copyright p, .bottom .copyright a:hover{
+    color: #6c6d83;
+}
+

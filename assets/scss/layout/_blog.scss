@@ -1,0 +1,100 @@
+
+// blog section
+.blog-section{
+	float: left;
+	width:100%;
+	position: relative;
+	z-index: 1;
+	background-color:$team-bg;
+}
+.blog-section h2{
+    font-weight: $font-weight-bold;
+    font-size: $heading-font;
+}
+
+.blog-grids {
+    overflow: hidden;
+    margin: 0 -15px;
+}
+
+.blog-grids .grid {
+    background-color: $team-bg;
+    width: calc(33.33% - 30px);
+    float: left;
+    padding: 15px;
+    @include margin (20px 15px 15px);
+    @include border-radius(10px);
+    -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    @include border-top(solid $bg-story);
+
+}
+
+.entry-media img {
+    @include border-radius(10px);
+    width: 100%;
+    max-height: 188px;
+}
+
+.entry-body {
+    padding: 27px 10px;
+}
+
+.entry-body .cat {
+    font-family: $body-font;
+    font-size: 12px;
+    font-weight: 600;
+    color: $link-color;
+    text-transform: uppercase;
+}
+
+.entry-body h3 {
+    font-size: $blogheading;
+    font-weight: $font-weight-semibold;
+    line-height: $line-height-md;
+    margin: 3px 0 0.73em;
+}
+
+.entry-body h3 a {
+    color:$body-color;
+}
+
+.entry-body h3 a:hover {
+    color: $link-color;
+    text-decoration: none;
+}
+
+.entry-body p {
+    margin-bottom: 2em;
+    color: $body-color;
+    line-height:  $line-height-lg;
+}
+
+.read-more-date {
+    position: relative;
+}
+
+.read-more-date a {
+    font-family: $body-font;
+    font-size: 16px;
+    font-size: 1.06667rem;
+    font-weight: 600;
+    color: $body-color;
+    text-transform: uppercase;
+}
+
+.read-more-date .date {
+    position: absolute;
+    right: 0;
+    color: $body-color;
+}
+.text-underline-primary{margin-bottom: 1rem;}
+
+.text-underline{
+    width:100px;
+    height: 4px;
+    left: 50%;
+    background-color: $top-nav;
+    margin: 0 auto;
+    border-radius: 10px;
+}

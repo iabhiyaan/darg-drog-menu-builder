@@ -1,0 +1,14 @@
+{
+    "template_name": "ABC Solutions",
+    "version": "0.0.1",
+    "category": {
+      "name": "Advertising & Marketing",
+      "sub-category": "Marketing Agency"
+    },
+    "features": [
+     "slider",
+     "services",
+     "story",
+     "blog"
+    ]
+  }
