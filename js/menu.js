@@ -162,16 +162,17 @@ updateDynamicMenu.addEventListener('click', setNavBar)
 // drag and drop starts
 
 function handleDragStart(e) {
-   this.classList.add('dragging')
+   const targetEl = e.target
+   targetEl.classList.add('dragging')
 
-   dragSrcEl = this
+   dragSrcEl = targetEl
 
    e.dataTransfer.effectAllowed = 'move'
-   e.dataTransfer.setData('text/html', this.innerHTML)
+   e.dataTransfer.setData('text/html', targetEl.innerHTML)
 }
 
 function handleDragEnter(e) {
-   this.classList.add('dragover')
+   e.target.classList.add('dragover')
 }
 
 function handleDragOver(e) {
@@ -182,27 +183,29 @@ function handleDragOver(e) {
    e.dataTransfer.dropEffect = 'move'
    return false
 }
+
 function handleDragLeave(e) {
-   this.classList.remove('dragover')
+   e.target.classList.remove('dragover')
 }
 
 function handleDrop(e) {
    if (e.stopPropagation) {
       e.stopPropagation()
    }
-   if (dragSrcEl != this) {
-      dragSrcEl.innerHTML = this.innerHTML
-      this.innerHTML = e.dataTransfer.getData('text/html')
+   const targetEl = e.target
+   if (dragSrcEl != targetEl) {
+      dragSrcEl.innerHTML = targetEl.innerHTML
+      targetEl.innerHTML = e.dataTransfer.getData('text/html')
    }
 
-   const hrefEnd = this.getAttribute('data-href')
-   const titleEnd = this.getAttribute('data-title')
+   const hrefEnd = targetEl.getAttribute('data-href')
+   const titleEnd = targetEl.getAttribute('data-title')
 
    const hrefSource = dragSrcEl.getAttribute('data-href')
    const titleSource = dragSrcEl.getAttribute('data-title')
 
-   this.setAttribute('data-href', hrefSource)
-   this.setAttribute('data-title', titleSource)
+   targetEl.setAttribute('data-href', hrefSource)
+   targetEl.setAttribute('data-title', titleSource)
 
    dragSrcEl.setAttribute('data-href', hrefEnd)
    dragSrcEl.setAttribute('data-title', titleEnd)
@@ -211,22 +214,49 @@ function handleDrop(e) {
 }
 
 function handleDragEnd(e) {
-   ;[].forEach.call(cols, function (col) {
+   Array.from(cols).forEach((col) => {
       col.classList.remove('dragover')
       col.classList.remove('dragging')
    })
+   e.target.classList.remove('dragging')
+   e.target.classList.remove('dragover')
 }
 
 var cols = document.querySelectorAll('#columns li')
-
-;[].forEach.call(cols, function (col) {
-   col.addEventListener('dragstart', handleDragStart, false)
-   col.addEventListener('dragenter', handleDragEnter, false)
-   col.addEventListener('dragover', handleDragOver, false)
-   col.addEventListener('dragleave', handleDragLeave, false)
-   col.addEventListener('drop', handleDrop, false)
-   col.addEventListener('dragend', handleDragEnd, false)
-})
+addDynamicEventListener(
+   document.body,
+   'dragstart',
+   '#columns li',
+   handleDragStart
+)
+addDynamicEventListener(
+   document.body,
+   'dragenter',
+   '#columns li',
+   handleDragEnter
+)
+addDynamicEventListener(
+   document.body,
+   'dragover',
+   '#columns li',
+   handleDragOver
+)
+addDynamicEventListener(
+   document.body,
+   'dragleave',
+   '#columns li',
+   handleDragLeave
+)
+addDynamicEventListener(document.body, 'drop', '#columns li', handleDrop)
+addDynamicEventListener(document.body, 'dragend', '#columns li', handleDragEnd)
+// ;[].forEach.call(cols, function (col) {
+//    col.addEventListener('dragstart', handleDragStart, false)
+//    col.addEventListener('dragenter', handleDragEnter, false)
+//    col.addEventListener('dragover', handleDragOver, false)
+//    col.addEventListener('dragleave', handleDragLeave, false)
+//    col.addEventListener('drop', handleDrop, false)
+//    col.addEventListener('dragend', handleDragEnd, false)
+// })
 
 var dragSrcEl = null
 
