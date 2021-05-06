@@ -210,6 +210,10 @@ function handleDrop(e) {
    dragSrcEl.setAttribute('data-href', hrefEnd)
    dragSrcEl.setAttribute('data-title', titleEnd)
 
+   dragSrcEl.classList.remove('dragging')
+   dragSrcEl.classList.remove('dragover')
+   targetEl.classList.remove('dragging')
+   targetEl.classList.remove('dragover')
    return false
 }
 
@@ -218,8 +222,8 @@ function handleDragEnd(e) {
       col.classList.remove('dragover')
       col.classList.remove('dragging')
    })
-   e.target.classList.remove('dragging')
    e.target.classList.remove('dragover')
+   e.target.classList.remove('dragging')
 }
 
 var cols = document.querySelectorAll('#columns li')
