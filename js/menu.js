@@ -63,6 +63,7 @@ function setItemToNav(link, title, index) {
 
 // add menu starts
 function addMenuItem(e) {
+   e.preventDefault()
    if (urlTitle.value == '' && urlLink.value == '') {
       alert('Please enter title and link')
       return
@@ -76,7 +77,9 @@ function addMenuItem(e) {
    closeModal()
 }
 const addUrlEl = document.querySelector('.add__url')
-addUrlEl.addEventListener('click', addMenuItem)
+const addMenuForm = document.querySelector('.newMenu')
+// addUrlEl.addEventListener('click', addMenuItem)
+addMenuForm.addEventListener('submit', addMenuItem)
 // add menu ends
 
 // edit menu item starts
@@ -110,6 +113,7 @@ addDynamicEventListener(document.body, 'click', '.open_edit_form', editMenuItem)
 
 // update menu starts
 function updateMenu(e) {
+   e.preventDefault()
    if (editUrlTitle.value == '' && editUrlLink.value == '') {
       alert('Please enter title and link')
       return
@@ -123,7 +127,9 @@ function updateMenu(e) {
    closeEditForm()
 }
 const updateButton = document.querySelector('.update__url')
-updateButton.addEventListener('click', updateMenu)
+const updateMenuEl = document.querySelector('.updateMenu')
+// updateButton.addEventListener('click', updateMenu)
+updateMenuEl.addEventListener('submit', updateMenu)
 // update menu ends
 
 // close edit menu starts

@@ -148,32 +148,37 @@
 	</div> -->
 
 	<div class="add__form modal__form hidden">
-		<div>
-			<label>Title</label>
-			<input type="text" class="form-control url__title" />
-		</div>
-		<div>
-			<label>Link</label>
-			<input type="text" class="form-control url__link" />
-		</div>
-		<button class="btn add__url" style="border: 1px solid #111; margin-top: 10px;">Save Url</button>
-		<button class="btn close__form" style="border: 1px solid #111; margin-top: 10px;">Close</button>
+		<form action="#" class="newMenu">
+			<div>
+				<label>Title</label>
+				<input type="text" class="form-control url__title" />
+			</div>
+			<div>
+				<label>Link</label>
+				<input type="text" class="form-control url__link" />
+			</div>
+			<button class="btn add__url" style="border: 1px solid #111; margin-top: 10px;">Save Url</button>
+			<button class="btn close__form" style="border: 1px solid #111; margin-top: 10px;">Close</button>
+		</form>
+
 	</div>
 
 	<div class="edit__form modal__form hidden">
-		<div>
-			<label>Title</label>
-			<input type="text" class="form-control edit_url_title" />
-		</div>
-		<div>
-			<label>Link</label>
-			<input type="text" class="form-control edit_url_link" />
-		</div>
-		<div class="hidden">
-			<input type="hidden" class="list_id">
-		</div>
-		<button class="btn update__url" style="border: 1px solid #111; margin-top: 10px;">Save Url</button>
-		<button class="btn close__edit__form" style="border: 1px solid #111; margin-top: 10px;">Close</button>
+		<form action="#" class="updateMenu">
+			<div>
+				<label>Title</label>
+				<input type="text" class="form-control edit_url_title" />
+			</div>
+			<div>
+				<label>Link</label>
+				<input type="text" class="form-control edit_url_link" />
+			</div>
+			<div class="hidden">
+				<input type="hidden" class="list_id">
+			</div>
+			<button class="btn update__url" style="border: 1px solid #111; margin-top: 10px;">Save Url</button>
+			<button class="btn close__edit__form" style="border: 1px solid #111; margin-top: 10px;">Close</button>
+		</form>
 	</div>
 
 	<!-- Top navigation -->
@@ -206,7 +211,7 @@
 
 	<div class="allmenu__list" style="margin-top: 120px">
 		<button class="update_dynamic_menu" style="margin-left: 40px;">Save Menu</button>
-		<ul class="menu_item_group"  id="columns">
+		<ul class="menu_item_group" id="columns">
 
 		</ul>
 		<button class="open__form" style="margin-top: 20px;">Add Menu</button>
